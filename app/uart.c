@@ -49,17 +49,17 @@
 typedef struct {
     uint16_t ID;
     uint16_t Size;
-} Header_t;
+} __attribute__((packed)) Header_t;
 
 typedef struct {
     uint8_t  Padding[2];
     uint16_t ID;
-} Footer_t;
+} __attribute__((packed)) Footer_t;
 
 typedef struct {
     Header_t Header;
     uint32_t Timestamp;
-} CMD_0514_t;
+} __attribute__((packed)) CMD_0514_t;
 
 typedef struct {
     Header_t Header;
@@ -70,7 +70,7 @@ typedef struct {
         uint8_t  Padding[2];
         uint32_t Challenge[4];
     } Data;
-} REPLY_0514_t;
+} __attribute__((packed)) REPLY_0514_t;
 
 typedef struct {
     Header_t Header;
@@ -78,7 +78,7 @@ typedef struct {
     uint8_t  Size;
     uint8_t  Padding;
     uint32_t Timestamp;
-} CMD_051B_t;
+} __attribute__((packed)) CMD_051B_t;
 
 typedef struct {
     Header_t Header;
@@ -88,7 +88,7 @@ typedef struct {
         uint8_t  Padding;
         uint8_t  Data[128];
     } Data;
-} REPLY_051B_t;
+} __attribute__((packed)) REPLY_051B_t;
 
 typedef struct {
     Header_t Header;
@@ -97,14 +97,14 @@ typedef struct {
     bool     bAllowPassword;
     uint32_t Timestamp;
     uint8_t  Data[0];
-} CMD_051D_t;
+} __attribute__((packed)) CMD_051D_t;
 
 typedef struct {
     Header_t Header;
     struct {
         uint16_t Offset;
     } Data;
-} REPLY_051D_t;
+} __attribute__((packed)) REPLY_051D_t;
 
 typedef struct {
     Header_t Header;
@@ -113,7 +113,7 @@ typedef struct {
         uint8_t  ExNoiseIndicator;
         uint8_t  GlitchIndicator;
     } Data;
-} REPLY_0527_t;
+} __attribute__((packed)) REPLY_0527_t;
 
 typedef struct {
     Header_t Header;
@@ -121,12 +121,12 @@ typedef struct {
         uint16_t Voltage;
         uint16_t Current;
     } Data;
-} REPLY_0529_t;
+} __attribute__((packed)) REPLY_0529_t;
 
 typedef struct {
     Header_t Header;
     uint32_t Response[4];
-} CMD_052D_t;
+} __attribute__((packed)) CMD_052D_t;
 
 typedef struct {
     Header_t Header;
@@ -134,12 +134,12 @@ typedef struct {
         bool bIsLocked;
         uint8_t Padding[3];
     } Data;
-} REPLY_052D_t;
+} __attribute__((packed)) REPLY_052D_t;
 
 typedef struct {
     Header_t Header;
     uint32_t Timestamp;
-} CMD_052F_t;
+} __attribute__((packed)) CMD_052F_t;
 
 static const uint8_t Obfuscation[16] =
 {
@@ -446,7 +446,7 @@ static void CMD_0601_ReadBK4819Reg(const uint8_t *pBuffer)
     typedef struct  __attribute__((__packed__)) {
         Header_t header;
         uint8_t reg;
-    } CMD_0601_t;
+    } __attribute__((packed)) CMD_0601_t;
 
     CMD_0601_t *cmd = (CMD_0601_t*) pBuffer;
 
@@ -455,8 +455,8 @@ static void CMD_0601_ReadBK4819Reg(const uint8_t *pBuffer)
         struct __attribute__((__packed__)) {
             uint8_t reg;
             uint16_t value;
-        } data;
-    } reply;
+        } __attribute__((packed)) data;
+    } __attribute__((packed)) reply;
 
     reply.header.ID = 0x0601;
     reply.header.Size = sizeof(reply.data);
@@ -471,7 +471,7 @@ static void CMD_0602_WriteBK4819Reg(const uint8_t *pBuffer)
         Header_t header;
         uint8_t reg;
         uint16_t value;
-    } CMD_0602_t;
+    } __attribute__((packed)) CMD_0602_t;
 
     CMD_0602_t *cmd = (CMD_0602_t*) pBuffer;
     BK4819_WriteRegister(cmd->reg, cmd->value);

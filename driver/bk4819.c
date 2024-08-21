@@ -1235,7 +1235,7 @@ void BK4819_EnableTXLink(void)
 void BK4819_PlayDTMF(char Code)
 {
 
-    struct DTMF_TonePair {
+    __attribute__((packed)) struct DTMF_TonePair {
         uint16_t tone1;
         uint16_t tone2;
     };
@@ -1725,7 +1725,7 @@ static void BK4819_PlayRogerNormal(void)
 
 void BK4819_PlayRogerMDC(void)
 {
-    struct reg_value {
+    __attribute__((packed)) struct reg_value {
         BK4819_REGISTER_t reg;
         uint16_t value;
     };

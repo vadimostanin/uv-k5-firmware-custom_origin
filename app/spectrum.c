@@ -35,7 +35,7 @@
 #include "driver/eeprom.h"
 #endif
 
-struct FrequencyBandInfo
+__attribute__((packed)) struct FrequencyBandInfo
 {
     uint32_t lower;
     uint32_t upper;

@@ -41,7 +41,7 @@ typedef struct {
 	uint32_t IE;
 	uint32_t IF;
 	uint32_t FIFOST;
-} SPI_Port_t;
+} __attribute__((packed)) SPI_Port_t;
 
 #define SPI_CR_SPR_SHIFT                     0
 #define SPI_CR_SPR_WIDTH                     3

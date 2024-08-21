@@ -154,14 +154,14 @@ typedef struct SpectrumSettings
     int dbMax;
     ModulationMode_t modulationType;
     bool backlightState;
-} SpectrumSettings;
+} __attribute__((packed)) SpectrumSettings;
 
 typedef struct KeyboardState
 {
     KEY_Code_t current;
     KEY_Code_t prev;
     uint8_t counter;
-} KeyboardState;
+} __attribute__((packed)) KeyboardState;
 
 typedef struct ScanInfo
 {
@@ -170,7 +170,7 @@ typedef struct ScanInfo
     uint32_t f, fPeak;
     uint16_t scanStep;
     uint16_t measurementsCount;
-} ScanInfo;
+} __attribute__((packed)) ScanInfo;
 
 typedef struct PeakInfo
 {
@@ -178,7 +178,7 @@ typedef struct PeakInfo
     uint16_t rssi;
     uint32_t f;
     uint16_t i;
-} PeakInfo;
+} __attribute__((packed)) PeakInfo;
 
 void APP_RunSpectrum(void);
 

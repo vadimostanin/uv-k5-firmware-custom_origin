@@ -24,7 +24,7 @@
 typedef struct {
     const uint32_t lower;
     const uint32_t upper;
-} freq_band_table_t;
+} __attribute__((packed)) freq_band_table_t;
 
 extern const freq_band_table_t BX4819_band1;
 extern const freq_band_table_t BX4819_band2;

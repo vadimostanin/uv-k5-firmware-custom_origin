@@ -161,7 +161,7 @@ typedef union  {
         uint8_t lnaSIdx:2;
     };
     uint16_t __raw;
-} GainData;
+} __attribute__((packed)) GainData;
 
     static const int8_t lna_short_dB[] = {-28, -24, -19,  0};   // corrected'ish
     static const int8_t lna_dB[]       = {-24, -19, -14,  -9, -6, -4, -2, 0};

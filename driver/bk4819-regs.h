@@ -25,7 +25,7 @@ typedef struct {
   uint8_t offset;
   uint16_t mask;
   uint16_t inc;
-} RegisterSpec;
+} __attribute__((packed)) RegisterSpec;
 
 static const RegisterSpec afcDisableRegSpec = {"AFC Disable", 0x73, 4, 1, 1};
 static const RegisterSpec afOutRegSpec = {"AF Output Select", 0x47, 8, 0xF, 1};

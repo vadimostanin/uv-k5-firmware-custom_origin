@@ -231,7 +231,7 @@
 typedef struct {
 	uint32_t STAT;
 	uint32_t DATA;
-} ADC_Channel_t;
+} __attribute__((packed)) ADC_Channel_t;
 
 #define ADC_CHx_STAT_EOC_SHIFT                  0
 #define ADC_CHx_STAT_EOC_WIDTH                  1

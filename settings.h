@@ -280,7 +280,7 @@ typedef struct {
     uint8_t               S0_LEVEL;
     uint8_t               S9_LEVEL;
 #endif
-} EEPROM_Config_t;
+} __attribute__((packed)) EEPROM_Config_t;
 
 extern EEPROM_Config_t gEeprom;
 

@@ -33,7 +33,7 @@ typedef struct {
     uint8_t RXFIFO_HFULL;
     uint8_t RXFIFO_FULL;
     uint8_t RXFIFO_OVF;
-} SPI_Config_t;
+} __attribute__((packed)) SPI_Config_t;
 
 void SPI0_Init(void);
 void SPI_WaitForUndocumentedTxFifoStatusBit(void);

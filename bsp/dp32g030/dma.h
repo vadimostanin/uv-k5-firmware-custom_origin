@@ -195,7 +195,7 @@ typedef struct {
 	uint32_t MSADDR;
 	uint32_t MDADDR;
 	uint32_t ST;
-} DMA_Channel_t;
+} __attribute__((packed)) DMA_Channel_t;
 
 #define DMA_CH_CTR_CH_EN_SHIFT                 0
 #define DMA_CH_CTR_CH_EN_WIDTH                 1

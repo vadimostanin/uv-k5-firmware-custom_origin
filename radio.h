@@ -76,7 +76,7 @@ typedef struct
     DCS_CodeType_t CodeType;
     uint8_t        Code;
     uint8_t        Padding[2];
-} FREQ_Config_t;
+} __attribute__((packed)) FREQ_Config_t;
 
 typedef struct VFO_Info_t
 {
@@ -132,7 +132,7 @@ typedef struct VFO_Info_t
     uint8_t        Compander;
 
     char           Name[16];
-} VFO_Info_t;
+} __attribute__((packed)) VFO_Info_t;
 
 // Settings of the main VFO that is selected by the user
 // The pointer follows gEeprom.TX_VFO index

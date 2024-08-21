@@ -41,7 +41,7 @@
 typedef struct {
 	uint32_t DATA;
 	uint32_t DIR;
-} GPIO_Bank_t;
+} __attribute__((packed)) GPIO_Bank_t;
 
 #define GPIO_DIR_0_SHIFT          0
 #define GPIO_DIR_0_WIDTH          1

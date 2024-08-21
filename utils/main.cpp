@@ -66,7 +66,7 @@ typedef struct
 	int16_t mixer_dB;
 	int16_t pga_dB;
 	int16_t sum_dB;
-} t_gain_table;
+} __attribute__((packed)) t_gain_table;
 
 void create_gain_table(const char *filename)
 {

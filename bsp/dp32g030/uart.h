@@ -48,7 +48,7 @@ typedef struct {
 	uint32_t FIFO;
 	uint32_t FC;
 	uint32_t RXTO;
-} UART_Port_t;
+} __attribute__((packed)) UART_Port_t;
 
 #define UART_CTRL_UARTEN_SHIFT              0
 #define UART_CTRL_UARTEN_WIDTH              1

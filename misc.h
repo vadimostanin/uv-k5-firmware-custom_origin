@@ -206,7 +206,7 @@ typedef union {
             scanlist3 : 1;
     };
     uint8_t __val;
-} ChannelAttributes_t;
+} __attribute__((packed)) ChannelAttributes_t;
 
 extern ChannelAttributes_t   gMR_ChannelAttributes[207];
 extern bool                  gMR_ChannelExclude[207];

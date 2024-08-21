@@ -26,7 +26,7 @@
 typedef struct {
     const char  name[7];    // menu display area only has room for 6 characters
     uint8_t     menu_id;
-} t_menu_item;
+} __attribute__((packed)) t_menu_item;
 
 enum
 {
@@ -194,7 +194,7 @@ extern const char        gSubMenu_BATTYP[3][9];
     extern const char        gSubMenu_SCRAMBLER[11][7];
 #endif
 
-typedef struct {char* name; uint8_t id;} t_sidefunction;
+typedef struct {char* name; uint8_t id;} __attribute__((packed)) t_sidefunction;
 extern const uint8_t         gSubMenu_SIDEFUNCTIONS_size;
 extern const t_sidefunction gSubMenu_SIDEFUNCTIONS[];
                          

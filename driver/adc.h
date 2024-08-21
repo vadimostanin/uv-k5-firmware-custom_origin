@@ -59,7 +59,7 @@ typedef struct {
     bool CALIB_OFFSET_VALID;
     bool CALIB_KD_VALID;
     uint8_t _pad[1];
-} ADC_Config_t;
+} __attribute__((packed)) ADC_Config_t;
 
 uint8_t ADC_GetChannelNumber(ADC_CH_MASK Mask);
 void ADC_Disable(void);
